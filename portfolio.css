@@ -1,0 +1,149 @@
+/* General Styles */
+body {
+    margin: 0;
+    background: #cde6f3;
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    background: #34495e;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-content {
+    margin-top: 20px;
+}
+
+h1 {
+    font-family: 'Playwrite ES', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(143, 100, 184);
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: larger;
+    margin: 10px 0;
+}
+
+/* Navbar Styles */
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between for even distribution */
+    background-color: #34495e;
+}
+
+.navbar li {
+    margin: 0 10px;
+}
+
+.navbar a {
+    color: rgb(217, 166, 249);
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #63798e;
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Pushes other items to the right */
+}
+
+.logo-img {
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.logo-text {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-style: italic;
+    color: #fff; /* Ensure it's white for visibility */
+}
+
+/* Section Styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin: 50px 0;
+}
+
+h2 {
+    font-size: xx-large;
+    margin-bottom: 20px;
+    font-family: 'Playwrite ES', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #34495e;
+}
+.profile,.certification,.projects,.skills{
+    background: #a8dffd;
+}
+
+.profile-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    text-align: left;
+}
+
+.profile-img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.profile .p{
+    font-weight: bold;
+    font-family: cursive;
+    margin-right:40px;
+}
+.certification-content,
+.projects-content,
+.skills-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.certification-contentgrid{
+    display:grid;
+}
+.skills content li{
+    text-align:left;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #34495e;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+   
+    justify-content: space-between;
+}

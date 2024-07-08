@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator Example</title>
+        <link rel="stylesheet" href="calcstyles.css">
+    </head>
+
+<body>
+    <div class="calculator">
+    
+    <div class="displays">
+       
+           
+        <input type="text" id="number" class="display" placeholder="0" >
+           
+        
+        <div id="number" class="button">
+        <div><button class="ac" onclick="clearDisplay()">AC</button>
+        <button  onclick="appendCharacter('7')" >7</button>
+        <button  onclick="appendCharacter('4')">4</button>
+        <button  onclick="appendCharacter('1')">1</button>
+        <button  onclick="appendCharacter('0')">0</button></div>
+           
+        <div><button  class="operator" onclick="appendOperator('%')">%</button>
+        <button   onclick="appendCharacter('8')">8</button>
+        <button   onclick="appendCharacter('5')">5</button>
+        <button   onclick="appendCharacter('2')">2</button>
+        <button   onclick="appendCharacter('00')">00</button></div>
+       
+        <div><button  class="operator" onclick="deleteLast()">⌫</button>
+        <button  onclick="appendCharacter('9')">9</button>
+        <button  onclick="appendCharacter('6')">6</button>
+        <button onclick="appendCharacter('3')">3</button>
+        <button  onclick="appendCharacter('.')">.</button></div>
+      
+        <div><button class="operator" onclick="appendOperator('/')">/</button>
+        <button  class="operator" onclick="appendOperator('*')">x</button>
+        <button  class="operator" onclick="appendOperator('+')">+</button>
+        <button  class="operator" onclick="appendOperator('-')"> -</button>
+        <button  class="equal" onclick="calculate()">=</button></div>
+        
+        </div>
+    </div>
+
+    </div>
+
+
+    <script>
+        
+        let displayElement = document.getElementById("number");
+        let currentInput = '';
+
+    // Function to append a number to the current input
+    function appendCharacter(number) {
+        console.log("Appending number:", number); // Debugging statement
+        currentInput += number;
+        displayElement.value = currentInput;
+    }
+
+    // Function to append an operator to the current input
+    function appendOperator(operator) {
+        console.log("Appending operator:", operator); // Debugging statement
+        if (currentInput === '' && operator === '-') {
+            // Allow negative numbers
+            currentInput += operator;
+        } else if (currentInput !== '' && !isNaN(currentInput.slice(-1))) {
+            // Prevent appending operator immediately after another operator
+            currentInput += operator;
+        }
+        displayElement.value = currentInput;
+    }
+
+    // Function to clear the display and reset the current input
+    function clearDisplay() {
+        console.log("Clearing display"); // Debugging statement
+        currentInput = '';
+        displayElement.value = '';
+    }
+
+    function deleteLast() {
+    console.log("Deleting last no");
+    currentInput = currentInput.slice(0, -1);
+    displayElement.value = currentInput ;
+}
+
+
+    // Function to calculate the result and update the display
+    function calculate() {
+        console.log("Calculating result for:", currentInput); // Debugging statement
+        try {
+            currentInput = eval(currentInput).toString();
+            displayElement.value = currentInput;
+        } catch (error) {
+            displayElement.value = 'Error';
+            currentInput = '';
+        }
+    }
+</script>
+    
+    
+    
+
+
+    
+</body>
+</html>
